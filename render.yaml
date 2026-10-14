@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: python-qa-chatbot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 1 --threads 4
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111827">
+    <title>Python Q&amp;A Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+  </head>
+  <body data-ai-enabled="{{ 'true' if ai_enabled else 'false' }}">
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Python Q and A home">
+          <span class="brand-mark" aria-hidden="true">Py</span>
+          <span>Python Q&amp;A</span>
+        </a>
+        <span class="availability">
+          <span class="status-dot" aria-hidden="true"></span>
+          {% if ai_enabled %}AI tutor online{% else %}Knowledge base mode{% endif %}
+        </span>
+      </header>
+
+      <section class="chat-panel" aria-labelledby="page-title">
+        <div class="welcome">
+          <p class="eyebrow">YOUR PYTHON STUDY BUDDY</p>
+          <h1 id="page-title">What are you learning today?</h1>
+          <p class="subtitle">
+            Ask a Python question in your own words. Get a clear explanation
+            and examples to help you learn.
+          </p>
+          <div class="suggestions" aria-label="Example questions">
+            <button class="suggestion" type="button">How do Python functions work?</button>
+            <button class="suggestion" type="button">When should I use a tuple?</button>
+            <button class="suggestion" type="button">Explain list comprehensions</button>
+          </div>
+        </div>
+
+        <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions">
+          <article class="message assistant-message">
+            <div class="message-avatar" aria-hidden="true">Py</div>
+            <div class="message-content">
+              <p class="message-author">Python tutor</p>
+              <p>
+                Hi! Ask me anything about Python. Type a question below or
+                choose one of the examples.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <form id="question-form" class="composer">
+          <label class="visually-hidden" for="question">Your Python question</label>
+          <textarea
+            id="question"
+            name="question"
+            rows="1"
+            maxlength="1200"
+            placeholder="Ask a Python question..."
+            autocomplete="off"
+            required
+          ></textarea>
+          <button id="send-button" class="send-button" type="submit" aria-label="Send question">
+            <span>Ask</span>
+            <span aria-hidden="true">↑</span>
+          </button>
+        </form>
+        <p class="disclaimer">
+          {% if ai_enabled %}
+          AI answers can be wrong. Avoid sharing personal or sensitive information.
+          {% else %}
+          Built-in answers are available now. The AI tutor will be enabled when
+          the owner configures an OpenAI API key.
+          {% endif %}
+        </p>
+      </section>
+      <footer>Made for curious Python learners</footer>
+    </main>
+  </body>
+</html>
