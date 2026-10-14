@@ -36,6 +36,18 @@ those versions with AI answers instead, use a Python web host and keep the
 OpenAI API key in that host's private environment settings. OpenAI API usage
 may incur separate charges.
 
+## Deploy the full app on Render (free)
+
+This project includes a Render configuration that works with the Flask app on
+the free tier. Push this repository to GitHub, then in Render choose **New →
+Web Service**, select the repository, and use the default settings. Render will
+install the Python dependencies and start the app with the included
+`render.yaml` file.
+
+Set the `OPENAI_API_KEY` environment variable in the Render dashboard if you
+want AI responses; if it is missing, the app automatically falls back to the
+built-in Python knowledge base.
+
 ## Run the desktop app
 
 Install the requirements above, set `OPENAI_API_KEY` if you want AI answers,
