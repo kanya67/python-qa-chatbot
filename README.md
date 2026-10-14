@@ -18,31 +18,23 @@ $env:OPENAI_API_KEY = "your-OpenAI-API-key"
 Open `http://127.0.0.1:5000` in a browser. The API key is optional for local
 testing; without it, the app answers from the built-in knowledge base.
 
-## Publish a free personal site with Vercel
+## Publish a free public website with GitHub Pages
 
-Vercel's Hobby plan is $0 for personal projects and has usage limits. Check
-Vercel's current [pricing](https://vercel.com/pricing) and
-[Hobby plan terms](https://vercel.com/docs/limits/overview) before publishing.
+The public GitHub repository includes a static website in the root
+`index.html`. GitHub Pages can host this site for free from a public repository.
+It uses the built-in Python answers and does not require a server, API key, or
+visitor login. It does not provide AI-generated answers.
 
-1. The project is in the public repository
-   [kanya67/python-qa-chatbot](https://github.com/kanya67/python-qa-chatbot).
-2. Sign in to [Vercel](https://vercel.com/) with GitHub and choose **Add New
-   Project**. Import `kanya67/python-qa-chatbot`, keep the detected Flask
-   settings, and deploy.
-3. After deployment, Vercel shows a public `vercel.app` address. Share that
-   address so people can open the chatbot in their browser.
-4. To enable broader AI answers, add `OPENAI_API_KEY` under the project's
-   **Settings → Environment Variables** in Vercel, then redeploy. This is
-   optional; without it, the website answers using the built-in knowledge base.
+To publish it, open the repository's **Settings → Pages**. Under **Build and
+deployment**, select **Deploy from a branch**, choose the `main` branch and
+`/(root)` folder, and click **Save**. GitHub will build the site and show its
+public URL on the Pages settings screen. Share that URL so everyone can open
+the chatbot in a browser.
 
-Visitors do not need their own API key. If configured, AI requests use the key
-belonging to the project owner, and OpenAI API usage may incur separate
-charges. Never put the key in the source code or browser. Questions and recent
-conversation context are sent to OpenAI when the AI tutor is enabled. Avoid
-submitting secrets or sensitive personal information.
-
-The chat endpoint applies a per-client request limit; serverless hosting may
-reset in-memory limit counters between instances.
+The Flask server and desktop app remain available for local use. To deploy
+those versions with AI answers instead, use a Python web host and keep the
+OpenAI API key in that host's private environment settings. OpenAI API usage
+may incur separate charges.
 
 ## Run the desktop app
 
