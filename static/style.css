@@ -69,6 +69,32 @@ textarea {
   height: 36px;
 }
 
+.topbar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.live-demo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #d7def8;
+  border-radius: 999px;
+  color: var(--blue);
+  background: #eef3ff;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.live-demo-link:hover {
+  border-color: #b7c7ff;
+  background: #e8eeff;
+}
+
 .availability {
   display: inline-flex;
   align-items: center;
@@ -339,6 +365,10 @@ footer {
 
   .brand {
     font-size: 15px;
+  }
+
+  .topbar-actions {
+    gap: 8px;
   }
 
   .availability {

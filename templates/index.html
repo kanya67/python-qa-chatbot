@@ -15,10 +15,13 @@
           <span class="brand-mark" aria-hidden="true">Py</span>
           <span>Python Q&amp;A</span>
         </a>
-        <span class="availability">
-          <span class="status-dot" aria-hidden="true"></span>
-          {% if ai_enabled %}AI tutor online{% else %}Knowledge base mode{% endif %}
-        </span>
+        <div class="topbar-actions">
+          <a class="live-demo-link" href="https://python-qa-chatbot.onrender.com/" target="_blank" rel="noreferrer">Live demo</a>
+          <span class="availability">
+            <span class="status-dot" aria-hidden="true"></span>
+            {% if ai_enabled %}AI tutor online{% else %}Knowledge base mode{% endif %}
+          </span>
+        </div>
       </header>
 
       <section class="chat-panel" aria-labelledby="page-title">

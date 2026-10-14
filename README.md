@@ -18,6 +18,15 @@ $env:OPENAI_API_KEY = "your-OpenAI-API-key"
 Open `http://127.0.0.1:5000` in a browser. The API key is optional for local
 testing; without it, the app answers from the built-in knowledge base.
 
+## Live demo
+
+The hosted live demo for this app is:
+
+https://python-qa-chatbot.onrender.com/
+
+This is the default Render URL for the app name `python-qa-chatbot`. After the
+Render service is created, the live site will be available there.
+
 ## Publish a free public website with GitHub Pages
 
 The public GitHub repository includes a static website in the root
