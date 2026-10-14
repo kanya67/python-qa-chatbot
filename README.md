@@ -18,27 +18,31 @@ $env:OPENAI_API_KEY = "your-OpenAI-API-key"
 Open `http://127.0.0.1:5000` in a browser. The API key is optional for local
 testing; without it, the app answers from the built-in knowledge base.
 
-## Publish for everyone with Render
+## Publish a free personal site with Vercel
 
-1. Push this project to a GitHub repository. Do not include `.venv` or an API
-   key in the repository.
-2. In Render, create a **Blueprint** and connect that repository. Render reads
-   `render.yaml` to build and run the web service.
-3. In the service's environment settings, set `OPENAI_API_KEY` to an API key
-   you created in your OpenAI account. Keep the key private and only enter it
-   as a Render secret; never put it in browser code or source control.
-4. Wait for the deployment to finish, then share the public `onrender.com`
-   address shown by Render.
+Vercel's Hobby plan is $0 for personal projects and has usage limits. Check
+Vercel's current [pricing](https://vercel.com/pricing) and
+[Hobby plan terms](https://vercel.com/docs/limits/overview) before publishing.
 
-If `OPENAI_API_KEY` is not set in Render, the public website still works with
-the built-in answers, but it cannot provide broader AI answers. Visitors do not
-need their own API key; AI requests use the key configured by the service
-owner, and any resulting OpenAI charges are billed to that owner's account.
-The chat endpoint limits each client to 15 requests per minute.
+1. The project is in the public repository
+   [kanya67/python-qa-chatbot](https://github.com/kanya67/python-qa-chatbot).
+2. Sign in to [Vercel](https://vercel.com/) with GitHub and choose **Add New
+   Project**. Import `kanya67/python-qa-chatbot`, keep the detected Flask
+   settings, and deploy.
+3. After deployment, Vercel shows a public `vercel.app` address. Share that
+   address so people can open the chatbot in their browser.
+4. To enable broader AI answers, add `OPENAI_API_KEY` under the project's
+   **Settings → Environment Variables** in Vercel, then redeploy. This is
+   optional; without it, the website answers using the built-in knowledge base.
 
-Questions and conversation context sent while AI answers are enabled are
-forwarded to OpenAI. Avoid submitting secrets or sensitive personal
-information.
+Visitors do not need their own API key. If configured, AI requests use the key
+belonging to the project owner, and OpenAI API usage may incur separate
+charges. Never put the key in the source code or browser. Questions and recent
+conversation context are sent to OpenAI when the AI tutor is enabled. Avoid
+submitting secrets or sensitive personal information.
+
+The chat endpoint applies a per-client request limit; serverless hosting may
+reset in-memory limit counters between instances.
 
 ## Run the desktop app
 
