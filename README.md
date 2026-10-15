@@ -20,12 +20,13 @@ testing; without it, the app answers from the built-in knowledge base.
 
 ## Live demo
 
-The hosted live demo for this app is:
+The live demo (which opens directly without a sign-in) is:
 
-https://python-qa-chatbot.onrender.com/
+https://kanya67.github.io/python-qa-chatbot/
 
-This is the default Render URL for the app name `python-qa-chatbot`. After the
-Render service is created, the live site will be available there.
+The Render service URL may host a different deployment. For the Flask app, use
+the Render deployment instructions below and verify that the service is
+connected to this repository.
 
 ## Publish a free public website with GitHub Pages
 
