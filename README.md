@@ -58,6 +58,14 @@ After deployment, use the service URL shown in Render. Set `OPENAI_API_KEY` in
 the Render dashboard if you want AI responses; without it, the app uses the
 built-in Python knowledge base.
 
+The deployed Flask app is available at:
+
+https://python-qa-chatbot-web.onrender.com/
+
+It currently runs in knowledge-base mode. An OpenAI API key is optional and
+must be added by the owner in the Render environment settings to enable AI
+responses.
+
 ## Run the desktop app
 
 Install the requirements above, set `OPENAI_API_KEY` if you want AI answers,
