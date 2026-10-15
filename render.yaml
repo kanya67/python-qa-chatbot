@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: python-qa-chatbot
+    name: python-qa-chatbot-web
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt

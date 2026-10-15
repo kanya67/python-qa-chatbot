@@ -24,9 +24,9 @@ The live demo (which opens directly without a sign-in) is:
 
 https://kanya67.github.io/python-qa-chatbot/
 
-The Render service URL may host a different deployment. For the Flask app, use
-the Render deployment instructions below and verify that the service is
-connected to this repository.
+The existing `python-qa-chatbot.onrender.com` address currently opens a
+different app with a sign-in page; it is not this project's Flask app. Use the
+GitHub Pages link above for the public demo.
 
 ## Publish a free public website with GitHub Pages
 
@@ -48,14 +48,14 @@ may incur separate charges.
 
 ## Deploy the full app on Render (free)
 
-This project includes a Render configuration that works with the Flask app on
-the free tier. Push this repository to GitHub, then in Render choose **New →
-Web Service**, select the repository, and use the default settings. Render will
-install the Python dependencies and start the app with the included
-`render.yaml` file.
+This project includes a Render Blueprint for the Flask app. In Render choose
+**New → Blueprint**, connect this repository, and apply the `render.yaml`
+configuration. It creates a separate service named `python-qa-chatbot-web`,
+so it does not reuse the unrelated `python-qa-chatbot.onrender.com` address.
+Render installs the dependencies and starts the app from the Blueprint.
 
-Set the `OPENAI_API_KEY` environment variable in the Render dashboard if you
-want AI responses; if it is missing, the app automatically falls back to the
+After deployment, use the service URL shown in Render. Set `OPENAI_API_KEY` in
+the Render dashboard if you want AI responses; without it, the app uses the
 built-in Python knowledge base.
 
 ## Run the desktop app
